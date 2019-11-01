@@ -68,5 +68,5 @@ STOPSIGNAL SIGUSR1
 
 COPY docker-entrypoint.sh /
 COPY etc /usr/local/etc/
-ENTRYPOINT ["/docker-entrypoint.sh"]
+ENTRYPOINT ["sh", "/docker-entrypoint.sh"]
 CMD ["haproxy", "-f", "/usr/local/etc/haproxy/haproxy.cfg"]
