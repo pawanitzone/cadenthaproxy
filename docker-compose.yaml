@@ -1,0 +1,17 @@
+version: "3"
+
+services:
+  haproxy:
+    build: "."
+    ports:
+      - "80:80"
+      - "443:443"
+    ulimits:
+      nofile:
+        hard: "4124"
+        soft: "4124"
+    volumes:
+      - haproxy_vol:/usr/local
+
+volumes:
+  haproxy_vol:
